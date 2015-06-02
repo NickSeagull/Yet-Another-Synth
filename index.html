@@ -1,9 +1,75 @@
 <html>
     <head>
         <title>Yet Another Synth</title>
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.css"></link rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-theme.css"></link rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap-slider.css"></link rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css"></link rel="stylesheet">
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/pico.min.js"></script>
+        <script src="js/bootstrap-slider.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+        $(function() {
+            $( "#volumeSlider" ).slider();
+        });
+        </script>
+
+        <meta charset="utf-8">
     </head>
 
-    <body>
-        
+    <body onload="main()">
+        <h1 class="text-center">Yet Another Synth</h1>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                </div>
+
+                <div class="col-md-4 col-sm-4">
+                    <h2>Oscillator</h2>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                    Waveform
+                                    <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu text-center" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sine</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Square</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Triangle</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sawtooth</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4">
+                    <h2>Volume</h2>
+                    <input class="text-center" id="volumeSlider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="75"/>
+                </div>
+
+                <div class="col-md-2 col-sm-2">
+                </div>
+            </div>
+
+            <div class="row"><br><br><br><br></div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-2"></div>
+
+                <div class="col-md-4 col-sm-4">
+                    <h2>Cutoff</h2>
+                    <input class="text-center" id="cutoffSlider" data-slider-id='ex2Slider' type="text" data-slider-min="0.01" data-slider-max="0.99" data-slider-step="0.001" data-slider-value="0.99"/>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <h2>Distortion Amount</h2>
+                    <input class="text-center" id="distortionSlider" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                </div>
+
+                <div class="col-md-2 col-sm-2"></div>
+            </div>
+        </div>
     </body>
 </html>
