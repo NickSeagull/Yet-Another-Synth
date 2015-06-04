@@ -12,11 +12,6 @@
         <script src="js/pico.min.js"></script>
         <script src="js/bootstrap-slider.min.js"></script>
         <script src="js/main.js"></script>
-        <script>
-        $(function() {
-            $( "#volumeSlider" ).slider();
-        });
-        </script>
 
         <meta charset="utf-8">
     </head>
@@ -32,10 +27,7 @@
                 <div class="col-md-4 col-sm-4">
                     <h2>Oscillator</h2>
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                    Waveform
-                                    <span class="caret"></span>
-                        </button>
+                        <button class="btn btn-default dropdown-toggle btnWaveForm" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">Sine</button>
                         <ul class="dropdown-menu text-center" role="menu" aria-labelledby="dropdownMenu1">
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Sine</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Square</a></li>
@@ -47,7 +39,7 @@
 
                 <div class="col-md-4 col-sm-4">
                     <h2>Volume</h2>
-                    <input class="text-center" id="volumeSlider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="75"/>
+                    <input class="text-center" id="volumeSlider" data-slider-id='ex1Slider' type="text" data-slider-min="0.00" data-slider-max="1.00" data-slider-step="0.01" data-slider-value="0.75"/>
                 </div>
 
                 <div class="col-md-2 col-sm-2">
@@ -60,15 +52,21 @@
                 <div class="col-md-2 col-sm-2"></div>
 
                 <div class="col-md-4 col-sm-4">
-                    <h2>Cutoff</h2>
+                    <h2>Low Pass Filter Cutoff</h2>
                     <input class="text-center" id="cutoffSlider" data-slider-id='ex2Slider' type="text" data-slider-min="0.01" data-slider-max="0.99" data-slider-step="0.001" data-slider-value="0.99"/>
                 </div>
                 <div class="col-md-4 col-sm-4">
-                    <h2>Distortion Amount</h2>
-                    <input class="text-center" id="distortionSlider" data-slider-id='ex3Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+                    <h2>Distortion Threshold</h2>
+                    <input class="text-center" id="distortionSlider" data-slider-id='ex3Slider' type="text" data-slider-min="0.01" data-slider-max="1.0" data-slider-step="0.01" data-slider-value="1"/>
                 </div>
 
                 <div class="col-md-2 col-sm-2"></div>
+            </div>
+            <br><br><br><br>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <button id="play" class="btn btn-default">Play</button>
+                </div>
             </div>
         </div>
     </body>
